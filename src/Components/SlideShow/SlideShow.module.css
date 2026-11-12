@@ -1,0 +1,48 @@
+.slideShow {
+  width: 100%;
+  margin: 25px 0 35px;
+  padding: 0 2%;
+  box-sizing: border-box;
+  color: white;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 15px;
+}
+
+.swiper {
+  width: 100%;
+  padding: 5px 0 20px;
+}
+
+.swiper :global(.swiper-button-prev),
+.swiper :global(.swiper-button-next) {
+  color: white;
+  background: rgba(20, 20, 20, 0.7);
+  width: 38px;
+  height: 55px;
+  top: 50%;
+  margin-top: -27px;
+}
+
+.swiper :global(.swiper-button-prev)::after,
+.swiper :global(.swiper-button-next)::after {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.swiper :global(.swiper-button-prev) {
+  left: 0;
+}
+
+.swiper :global(.swiper-button-next) {
+  right: 0;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.1rem;
+  }
+}

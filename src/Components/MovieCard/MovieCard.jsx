@@ -6,31 +6,33 @@ import { BsPlusCircle } from "react-icons/bs";
 import { GoCheckCircleFill } from "react-icons/go";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
+
 function MovieCard({ movie }) {
-  let genres = ["Adventure", "Action", "Thriller"];
+  const poster = movie.poster_path
+    ? `${IMAGE_BASE_URL}${movie.poster_path}`
+    : "";
+
+  const title = movie.title || movie.name || "Movie";
+  const genres = ["Adventure", "Action", "Thriller"];
 
   return (
     <div className={styles.cardWrapper}>
-      {/* poster image */}
       <img
         className={styles.poster}
-        src={movie.poster_path}
-        alt="poster image"
+        src={poster}
+        alt={`${title} poster`}
       />
 
-      {/* hover card */}
       <div className={styles.hoverCard}>
-        {/* image */}
         <img
           className={styles.hoverImage}
-          src={movie.poster_path}
-          alt="hover image"
+          src={poster}
+          alt={`${title} preview`}
         />
 
-        {/* badge */}
         <div className={styles.badge}>Recently Added</div>
 
-        {/* button row */}
         <div className={styles.buttonsRow}>
           <FaCirclePlay
             className={styles.circleButton}
@@ -54,20 +56,20 @@ function MovieCard({ movie }) {
           />
         </div>
 
-        {/* metadata row */}
         <div className={styles.metaRow}>
           <span className={styles.tag}>U/A 16</span>
-          <span className={styles.tag}>Movie</span>
+          <span className={styles.tag}>
+            {movie.media_type === "tv" ? "TV Show" : "Movie"}
+          </span>
           <span className={styles.tag}>HD</span>
         </div>
 
-        {/* genres */}
         <div className={styles.genres}>
-          {genres.map((g, index) => (
-            <span key={index}>
-              {g}
+          {genres.map((genre, index) => (
+            <span key={genre}>
+              {genre}
               {index < genres.length - 1 && (
-                <span className={styles.dot}> • </span>
+                <span className={styles.dot}> •</span>
               )}
             </span>
           ))}

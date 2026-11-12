@@ -1,0 +1,39 @@
+.footer {
+  background-color: #111;
+  color: #808080;
+  padding: 50px 10% 25px;
+  font-size: 13px;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 25px;
+  font-size: 22px;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.footerLinks span {
+  cursor: pointer;
+}
+
+.footerLinks span:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .footerLinks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -13,7 +13,7 @@ body,
 
 body {
   min-width: 320px;
-  background-color:white;
+  background-color: #111;
   color: white;
   font-family: Arial, sans-serif;
 }
