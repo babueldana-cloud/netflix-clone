@@ -1,0 +1,396 @@
+.header {
+    background-color: black;
+    padding: 16px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+    transition: background-color 0.4s ease;
+}
+
+/* Header background when scrolling */
+
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    flex-shrink: 0;
+    width: 100px;
+    height: auto;
+    display: block;
+    cursor: pointer;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    align-items: center;
+}
+
+.navLink {
+    color: #f5f5f1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.navLink:hover {
+    color: #b3b3b0;
+}
+
+/* =========================
+   RIGHT SIDE SECTION
+========================= */
+
+.rightSection {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.searchButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #f5f5f1;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.searchButton:hover {
+    color: #b3b3b0;
+}
+
+.searchInput {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #808080;
+    color: #f5f5f1;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: #f5f5f1;
+}
+
+.searchInput::placeholder {
+    color: #808080;
+}
+
+/* =========================
+   NOTIFICATIONS
+========================= */
+
+.iconButton {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #f5f5f1;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.iconButton:hover {
+    color: #b3b3b0;
+}
+
+.notificationBadge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 14px;
+    height: 14px;
+    background-color: #e50914;
+    border-radius: 50%;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profileContainer {
+    position: relative;
+}
+
+.profileButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 8px;
+    color: #f5f5f1;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    transition: color 0.3s ease;
+}
+
+.profileButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profileAvatar {
+    width: 32px;
+    height: 32px;
+    background-color: #564d4d;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f1;
+    font-size: 16px;
+}
+
+/* =========================
+   PROFILE DROPDOWN
+========================= */
+
+.profileMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid #404040;
+    border-radius: 4px;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profileMenuItem {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    color: #f5f5f1;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.profileMenuItem:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profileMenuDivider {
+    border: none;
+    border-top: 1px solid #404040;
+    margin: 8px 0;
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 1024px) {
+
+    .container {
+        padding: 0 24px;
+        gap: 20px;
+    }
+
+    .nav {
+        gap: 12px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navLink {
+        font-size: 13px;
+    }
+
+    .searchInput {
+        width: 120px;
+    }
+
+    .rightSection {
+        gap: 12px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 12px 0;
+    }
+
+    .container {
+        padding: 0 12px;
+        gap: 12px;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    .nav {
+        gap: 12px;
+        flex: 1;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navLink {
+        font-size: 11px;
+    }
+
+    .rightSection {
+        gap: 8px;
+    }
+
+    .searchInput {
+        width: 90px;
+        font-size: 11px;
+        padding: 6px;
+    }
+
+    .profileButton {
+        padding: 2px;
+    }
+
+    .profileAvatar {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+    .container {
+        gap: 8px;
+        padding: 0 8px;
+    }
+
+    .logo {
+        width: 55px;
+    }
+
+    .nav {
+        gap: 10px;
+    }
+
+    .navLink {
+        font-size: 10px;
+    }
+
+    .rightSection {
+        gap: 5px;
+    }
+
+    .searchInput {
+        width: 75px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .searchInput {
+        width: 120px;
+    }
+
+    .rightSection {
+        gap: 16px;
+    }
+}
+

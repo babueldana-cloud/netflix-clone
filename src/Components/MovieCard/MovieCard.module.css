@@ -1,0 +1,185 @@
+/* =========================
+   CARD WRAPPER
+========================= */
+
+.cardWrapper {
+  position: relative;
+  width: 290px;
+  height: 190px;
+  transition: transform 0.3s ease-in-out;
+  overflow: visible;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* =========================
+   POSTER IMAGE
+========================= */
+
+.poster {
+  width: 227px;
+  height: 128px;
+  border-radius: 6px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   HOVER CARD
+========================= */
+
+.hoverCard {
+  position: absolute;
+  top: -50px;
+  left: 50px;
+  width: 320px;
+  min-height: 305px;
+  height: auto;
+  background-color: #111;
+  border-radius: 8px;
+  overflow: visible;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
+
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50px) scale(0.95);
+
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+
+  /* Optimization */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Show hover card when hovering over wrapper */
+
+.cardWrapper:hover .hoverCard {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50px) scale(1);
+  pointer-events: auto;
+}
+
+/* Keep hover card visible when hovering over it */
+
+.hoverCard:hover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =========================
+   HOVER IMAGE
+========================= */
+
+.hoverImage {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+/* =========================
+   RECENTLY ADDED BADGE
+========================= */
+
+.badge {
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 10px 0 0 12px;
+  font-weight: 500;
+}
+
+/* =========================
+   BUTTON ROW
+========================= */
+
+.buttonsRow {
+  display: flex;
+  gap: 8px;
+  margin: 12px;
+  align-items: center;
+}
+
+/* =========================
+   CIRCLE BUTTON
+========================= */
+
+.circleButton {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.circleButton:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   SMALL CIRCLE BUTTON
+========================= */
+
+.circleButtonSmall {
+  border-radius: 50%;
+  background: rgba(34, 34, 34, 0.8);
+  border: 1px solid #555;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.circleButtonSmall:hover {
+  background: #333;
+  border-color: #777;
+}
+
+/* =========================
+   METADATA ROW
+========================= */
+
+.metaRow {
+  color: white;
+  display: flex;
+  gap: 10px;
+  margin: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* =========================
+   GENRES
+========================= */
+
+.genres {
+  color: #bbb;
+  font-size: 13px;
+  margin: 6px 12px 12px;
+  line-height: 1.4;
+}
+
+.dot {
+  color: #888;
+  margin: 0 4px;
+}
+
+.tag {
+  color: #ddd;
+}
